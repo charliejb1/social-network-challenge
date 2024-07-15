@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const reactionSchema = require('./reactions');
 
-// Schema to create Student model
+// Schema to create user model
 const userSchema = new Schema(
   {
     first: {
@@ -9,16 +9,18 @@ const userSchema = new Schema(
       required: true,
       max_length: 50,
     },
+
     last: {
       type: String,
       required: true,
       max_length: 50,
     },
-    github: {
-      type: String,
-      required: true,
-      max_length: 50,
-    },
+    // github: {
+    //   type: String,
+    //   required: true,
+    //   max_length: 50,
+    // },
+    
     reactions: [reactionSchema],
   },
   {
