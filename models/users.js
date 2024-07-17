@@ -1,27 +1,27 @@
 const { Schema, model } = require('mongoose');
 const reactionSchema = require('./reactions');
+const thoughtSchema = require('./thoughts');
 
 // Schema to create user model
 const userSchema = new Schema(
   {
-    first: {
+    username: {
       type: String,
+      unique: true,
       required: true,
-      max_length: 50,
+      trimmed: true
     },
 
-    last: {
+    email: {
       type: String,
+      unique: true,
       required: true,
-      max_length: 50,
+      
     },
-    // github: {
-    //   type: String,
-    //   required: true,
-    //   max_length: 50,
-    // },
-    
-    reactions: [reactionSchema],
+
+    thoughts: [thoughtSchema],
+
+    friends: [userSchema],
   },
   {
     toJSON: {
@@ -29,6 +29,13 @@ const userSchema = new Schema(
     },
   }
 );
+
+userSchema
+  .virtual('friendCount')
+  // Getter
+  .get(function () {
+    return this.friends.length;
+  })
 
 const User = model('student', usersSchema);
 

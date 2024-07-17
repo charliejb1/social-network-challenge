@@ -6,28 +6,34 @@ const reactionSchema = new Schema(
       type: Schema.Types.ObjectId,
       default: () => new Types.ObjectId(),
     },
-    reactionName: {
+    reactionBody: {
       type: String,
       required: true,
-      maxlength: 50,
-      minlength: 4,
+      maxlength: 280,
+      minlength: 1,
       default: 'Unnamed reaction',
     },
-    // score: {
-    //   type: Number,
-    //   required: true,
-    //   default: () => Math.floor(Math.random() * (100 - 70 + 1) + 70),
-    // },
-    createdAt: {
-      type: Date,
-      default: Date.now,
+
+    username: {
+      type: String,
+      required: true,
+
     },
+  // score: {
+  //   type: Number,
+  //   required: true,
+  //   default: () => Math.floor(Math.random() * (100 - 70 + 1) + 70),
+  // },
+  createdAt: {
+  type: Date,
+  default: Date.now,
+},
   },
-  {
-    toJSON: {
-      getters: true,
+{
+  toJSON: {
+    getters: true,
     },
-    id: false,
+  id: true,
   }
 );
 
