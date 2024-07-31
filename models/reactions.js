@@ -19,11 +19,7 @@ const reactionSchema = new Schema(
       required: true,
 
     },
-  // score: {
-  //   type: Number,
-  //   required: true,
-  //   default: () => Math.floor(Math.random() * (100 - 70 + 1) + 70),
-  // },
+ 
   createdAt: {
   type: Date,
   default: Date.now,

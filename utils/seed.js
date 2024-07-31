@@ -28,23 +28,21 @@ connection.once('open', async () => {
     const fullName = getRandomName();
     const first = fullName.split(' ')[0];
     const last = fullName.split(' ')[1];
-    // const github = `${first}${Math.floor(Math.random() * (99 - 18 + 1) + 18)}`;
+
 
     users.push({
       first,
       last,
-    //   github,
       reactions,
     });
   }
 
-  // Add students to the collection and await the results
+  // Add users to the collection and await the results
   const userData = await User.create(users);
 
-  // Add courses to the collection and await the results
+  // Add thoughts to the collection and await the results
   await thought.create({
 thoughtName: 'My thought',
-    // inPerson: false,
 users: [...userData.map(({_id}) => _id)],
   });
 

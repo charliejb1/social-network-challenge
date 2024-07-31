@@ -19,9 +19,15 @@ const userSchema = new Schema(
       
     },
 
-    thoughts: [thoughtSchema],
+    thoughts: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Thought',
+    },],
 
-    friends: [userSchema],
+    friends: [{
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+    },],
   },
   {
     toJSON: {
@@ -37,6 +43,6 @@ userSchema
     return this.friends.length;
   })
 
-const User = model('student', usersSchema);
+const User = model('student', userSchema);
 
 module.exports = User;

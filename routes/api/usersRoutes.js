@@ -12,12 +12,6 @@ const {
 router.route('/').get(getUsers).post(createUser);
 
 // /api/users/:userId
-router.route('/:studentId').get(getSingleUser).delete(deleteUser);
-
-// /api/users/:userId/reactions
-router.route('/:studentId/assignments').post(addReaction);
-
-// /api/users/:userId/reactions/:reactionId
-router.route('/:studentId/assignments/:assignmentId').delete(removeReaction);
+router.route('/:userId').get(getSingleUser).delete(deleteUser);
 
 module.exports = router;

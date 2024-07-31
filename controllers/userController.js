@@ -82,48 +82,48 @@ module.exports = {
       res.status(500).json(err);
     }
   },
+}
+//   // Add a reaction to a user
+//   async addReaction(req, res) {
+//     console.log('You are adding a reaction');
+//     console.log(req.body);
 
-  // Add a reaction to a user
-  async addReaction(req, res) {
-    console.log('You are adding a reaction');
-    console.log(req.body);
+//     try {
+//       const user = await User.findOneAndUpdate(
+//         { _id: req.params.userId },
+//         { $addToSet: { reactions: req.body } },
+//         { runValidators: true, new: true }
+//       );
 
-    try {
-      const user = await User.findOneAndUpdate(
-        { _id: req.params.userId },
-        { $addToSet: { reactions: req.body } },
-        { runValidators: true, new: true }
-      );
+//       if (!user) {
+//         return res
+//           .status(404)
+//           .json({ message: 'No user found with that ID :(' });
+//       }
 
-      if (!user) {
-        return res
-          .status(404)
-          .json({ message: 'No user found with that ID :(' });
-      }
+//       res.json(user);
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   },
+//   // Remove reaction from a user
+//   async removeReaction(req, res) {
+//     try {
+//       const user = await User.findOneAndUpdate(
+//         { _id: req.params.userId },
+//         { $pull: { reaction: { reactionId: req.params.reactionId } } },
+//         { runValidators: true, new: true }
+//       );
 
-      res.json(user);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  },
-  // Remove reaction from a user
-  async removeReaction(req, res) {
-    try {
-      const user = await User.findOneAndUpdate(
-        { _id: req.params.userId },
-        { $pull: { reaction: { reactionId: req.params.reactionId } } },
-        { runValidators: true, new: true }
-      );
+//       if (!user) {
+//         return res
+//           .status(404)
+//           .json({ message: 'No user found with that ID :(' });
+//       }
 
-      if (!user) {
-        return res
-          .status(404)
-          .json({ message: 'No user found with that ID :(' });
-      }
-
-      res.json(user);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  },
-};
+//       res.json(user);
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   },
+// };
