@@ -31,4 +31,24 @@ Unable to accomplish: Delete routes for users and reactions were having errors. 
   Github Profile Link: https://github.com/charliejb1
   
   Email: charlieboyle252@gmail.com
+
+ ## Screen Recording:
+ 
+Part 1:
+
+https://github.com/user-attachments/assets/3811e5a5-992d-433a-b528-d2b7f6c78d5d
+
+Part 2: 
+
+https://github.com/user-attachments/assets/7c6f00af-1a65-463a-8b6a-d667a5f78603
+
+Part 3:
+
+https://github.com/user-attachments/assets/9279c6d9-919b-4e32-89a4-dc0186dad78a
+
+
+
+
+
+
   
